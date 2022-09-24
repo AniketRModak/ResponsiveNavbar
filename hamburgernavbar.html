@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NavBar</title>
+		<style>
+			* {
+				margin: 0%;
+				padding: 0%;
+				box-sizing: border-box;
+				font-size: 62.5%;
+			}
+			body {
+				background-color: darkslategray;
+			}
+			#menu {
+				width: 3.5rem;
+				height: 3rem;
+				cursor: pointer;
+				z-index: 100;
+				margin: 1.4rem 0.7rem 0rem 1rem;
+			}
+			.bar {
+				border-radius: 0.5rem;
+				height: 0.5rem;
+				width: 100%;
+				background: #fff;
+				display: block;
+				transition: 0.3s ease;
+			}
+			#bar1 {
+				transform: translateY(-0.4rem);
+			}
+			#bar3 {
+				transform: translateY(0.4rem);
+			}
+
+			.icon .bar {
+				background-color: #fff;
+			}
+			.icon #bar1 {
+				transform: translateY(0.4rem) rotate(-45deg);
+			}
+			.icon #bar2 {
+				opacity: 0;
+			}
+			.icon #bar3 {
+				transform: translateY(-0.6rem) rotate(45deg);
+			}
+			#nav li {
+				list-style: none;
+				padding: 1.6rem 0rem;
+			}
+			#nav li a {
+				padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+				font-size: 2.5rem;
+				color: #fff;
+				text-decoration: none;
+			}
+			#nav li a:hover {
+				border: 0.2rem solid white;
+			}
+			.nav {
+				padding: 0;
+				margin: 0rem 2.4rem;
+
+				display: none;
+				transition: 1s ease;
+			}
+			.change {
+				background-color: orange;
+				height: 100vh;
+				margin: 0%;
+				position: absolute;
+				font-size: 3rem;
+				top: 0;
+				z-index: -100;
+				width: 30%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			@media (max-width: 900px) {
+			}
+			@media (max-width: 500px) {
+				.change {
+					width: 100%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="navbar">
+			<div id="menu">
+				<div id="bar1" class="bar"></div>
+				<div id="bar2" class="bar"></div>
+				<div id="bar3" class="bar"></div>
+			</div>
+		</div>
+
+		<ul id="nav" class="nav">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Detalis</a></li>
+			<li><a href="#">shop</a></li>
+		</ul>
+
+		<script>
+			const menu = document.getElementById("menu");
+			const nav = document.getElementById("nav");
+			menu.addEventListener("click", () => {
+				menu.classList.toggle("icon");
+				nav.classList.toggle("change");
+			});
+		</script>
+	</body>
+</html>
